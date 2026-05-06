@@ -1,0 +1,36 @@
+# ~/.config/conky/system/config — local settings (copy this to "config")
+# This file is sourced by fans_fetch.sh and svc_fetch.sh and is gitignored.
+
+# === CoolerControl REST API ===
+# https://gitlab.com/coolercontrol/coolercontrol — leave CC_PASS empty if your
+# instance has no auth set, or set both CC_USER and CC_PASS to match your config.
+CC_HOST="localhost"
+CC_PORT="11987"
+CC_USER="CCAdmin"
+CC_PASS=""
+
+# === Device UID prefixes ===
+# Find these by querying your CoolerControl instance:
+#   curl -sk -b /tmp/conky_system/cc_session.txt https://localhost:11987/devices | jq
+# Leave any blank to skip that device.
+COMMANDER_UID=""    # Corsair Commander or similar fan controller
+GPU_DEV_UID=""      # GPU device
+
+# === Services to display ===
+# Each entry is "Label:port" — the service is shown as Online if localhost:port
+# accepts a TCP connection, Offline otherwise. Order is preserved on the panel.
+SERVICES=(
+    "Jellyfin:8096"
+    "qBittorrent:8080"
+)
+
+# === Optional: NFS mount to monitor ===
+# Leave NFS_MOUNT blank to skip this row.
+NFS_MOUNT=""
+NFS_LABEL="NFS"
+
+# === Optional: remote host/port to ping ===
+# Leave REMOTE_HOST blank to skip this row.
+REMOTE_HOST=""
+REMOTE_PORT=""
+REMOTE_LABEL="Remote API"

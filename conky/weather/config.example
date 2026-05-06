@@ -1,0 +1,14 @@
+# ~/.config/conky/weather/config — copy this to "config" and the panel will
+# auto-fill LATITUDE/LONGITUDE/CITY/TEMPERATURE_UNIT/WIND_UNIT on first run from
+# IP geolocation. Set LOCATION_MODE=manual and fill in the values to override.
+
+LOCATION_MODE=auto
+LATITUDE=
+LONGITUDE=
+CITY=
+UNITS_MODE=auto
+TEMPERATURE_UNIT=
+WIND_UNIT=
+TIME_FORMAT=12h
+ICON_SIZE_CURRENT=96
+ICON_SIZE_FORECAST=64

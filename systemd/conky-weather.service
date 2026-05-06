@@ -1,0 +1,13 @@
+[Unit]
+Description=Conky weather panel
+After=graphical-session.target network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/bin/bash -c 'cd %h/.config/conky/weather && exec /usr/bin/conky -c weather.conf'
+ExecStartPost=/bin/bash -c 'for i in 1 2 3 4 5; do wid=$(DISPLAY=:1 xdotool search --name "Conky Weather" 2>/dev/null | head -1) && [ -n "$wid" ] && DISPLAY=:1 xprop -id "$wid" -remove WM_COMMAND && break || sleep 1; done'
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

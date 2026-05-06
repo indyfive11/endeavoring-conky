@@ -1,0 +1,12 @@
+# Local-only configuration (machine-specific values, credentials)
+conky/system/config
+conky/weather/config
+
+# Runtime data and downloaded assets
+conky/weather/icons/
+
+# Python and editor cruft
+__pycache__/
+*.pyc
+*.swp
+.DS_Store
